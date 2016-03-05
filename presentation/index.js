@@ -79,7 +79,7 @@ export default class Presentation extends React.Component {
 
           <Slide transition={['slide']}>
             <img className={cx('face')} src={require('./img/face.png')} />
-            <Heading size={2} textColor='white' textFont='primary'>
+            <Heading style={{ fontWeight: 300 }} size={2} textColor='white' textFont='primary'>
               Ian Sinnott
             </Heading>
             <List>
@@ -190,6 +190,11 @@ export default class Presentation extends React.Component {
 
           <Slide transition={['slide']}>
             <Heading size={3} textColor='white'>Has this been done before?</Heading>
+            <List>
+              <Appear><ListItem><Heading size={3} textColor={reactBlue}>Yes, but...</Heading></ListItem></Appear>
+              <Appear><ListItem>renderToStaticMarkup</ListItem></Appear>
+              <Appear><ListItem>File system conventions, Markdown, etc</ListItem></Appear>
+            </List>
           </Slide>
 
           <Slide className={cx('spectacle-content')} transition={['slide']}>
