@@ -1,48 +1,55 @@
 /* eslint-disable */
 
-var path = require("path");
-var webpack = require("webpack");
+var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
-  devtool: "source-map",
+  devtool: 'source-map',
   entry: [
-    "webpack-hot-middleware/client",
-    "babel-polyfill",
-    "./index"
+    'webpack-hot-middleware/client',
+    'babel-polyfill',
+    './index'
   ],
   output: {
-    path: path.join(__dirname, "dist"),
-    filename: "bundle.js",
-    publicPath: "/dist/"
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/dist/'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
   module: {
-    loaders: [{ 
+    loaders: [{
       test: /\.md$/,
-      loader: "html-loader!markdown-loader?gfm=false"
+      loader: 'html-loader!markdown-loader?gfm=false'
     }, {
       test: /\.(js|jsx)$/,
       exclude: /node_modules/,
-      loader: "babel-loader"
+      loader: 'babel-loader'
     }, {
       test: /\.css$/,
-      loaders: ["style", "raw"],
+      loaders: ['style', 'raw'],
       include: __dirname
+    },{
+      test: /\.styl$/,
+      loaders: [
+        'style',
+        'css?modules&importLoaders=2&localIdentName=[name]__[local]__[hash:base64:6]',
+        'stylus',
+      ],
     }, {
       test: /\.svg$/,
-      loader: "url?limit=10000&mimetype=image/svg+xml",
-      include: path.join(__dirname, "assets")
+      loader: 'url?limit=10000&mimetype=image/svg+xml',
+      include: path.join(__dirname, 'assets')
     }, {
       test: /\.png$/,
-      loader: "url-loader?mimetype=image/png",
-      include: path.join(__dirname, "assets")
+      loader: 'url-loader?mimetype=image/png',
+      include: path.join(__dirname, 'presentation', 'img')
     }, {
       test: /\.jpg$/,
-      loader: "url-loader?mimetype=image/jpg",
-      include: path.join(__dirname, "assets")
+      loader: 'url-loader?mimetype=image/jpg',
+      include: path.join(__dirname, 'presentation', 'img')
     }]
   }
 };
