@@ -1,0 +1,17 @@
+{
+  "name": "react-static-initial-render",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "BABEL_ENV=production babel-node ./initial-render.js"
+  },
+  "author": "Ian Sinnott",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel-cli": "^6.6.4",
+    "babel-core": "^6.4.0",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  }
+}
