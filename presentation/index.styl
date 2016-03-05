@@ -1,5 +1,6 @@
 spaceline = 20px
 
+react-blue = #00d8ff
 fitc-red = #D7000F
 
 .title
@@ -50,3 +51,45 @@ fitc-red = #D7000F
   background fitc-red
   width 200px
   border-radius 50px
+
+.face
+  width 100px
+  height 100px
+  border-radius 50%
+
+.VenDiagram
+  position relative
+  &:after
+    position absolute
+    display block
+    content '?'
+    top 50%
+    left 50%
+    z-index 99
+    transform translate(-50%, -50%)
+    font-size 7rem
+    color react-blue
+
+.static-ven
+.react-ven
+  width 500px
+  height 500px
+  position absolute
+  top 50%
+  transform translateY(-50%)
+  border-radius 50%
+  display flex
+  flex-direction column
+  justify-content center
+  font-size 4rem
+  text-transform uppercase
+
+.static-ven
+  left 8%
+  background #261E53
+  border 1px solid #9013FE
+
+.react-ven
+  right 8%
+  background transparentify(react-blue, 0.4)
+  border 1px solid #B2F5FF

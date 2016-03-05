@@ -19,7 +19,7 @@ merge(screen, {
       background: colors.primary,
       fontWeight: "normal",
       fontSize: "2em",
-      color: colors.secondary,
+      color: 'white',
       overflow: "hidden"
     },
     "html, body": {

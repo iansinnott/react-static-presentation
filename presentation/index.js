@@ -32,11 +32,23 @@ require('spectacle/lib/themes/default/index.css');
 
 import theme, { reactBlue } from './theme.js';
 
+const VenDiagram = React.createClass({
+  render() {
+    return (
+      <div className={s.VenDiagram}>
+        <div className={cx('static-ven')}>Static</div>
+        <div className={cx('react-ven')}>React</div>
+      </div>
+    );
+  },
+});
+
 export default class Presentation extends React.Component {
   render() {
     return (
       <Spectacle theme={theme}>
         <Deck transition={['zoom', 'slide']} transitionDuration={500}>
+
           <Slide
             className={cx('spectacle-content')}
             transition={['zoom']}
@@ -54,11 +66,58 @@ export default class Presentation extends React.Component {
             <img className={cx('sponsors')} src={require('./img/sponsor-logos.png')} />
             <img className={cx('wifi')} src={require('./img/wifi.png')} />
           </Slide>
+
+          <Slide transition={['slide']}>
+            <img className={cx('face')} src={require('./img/face.png')} />
+            <Heading size={2} textColor='white' textFont='primary'>
+              Ian Sinnott
+            </Heading>
+            <List>
+              <Appear><ListItem>Software Engineer @TruSTAR</ListItem></Appear>
+              <Appear><ListItem>Love React</ListItem></Appear>
+            </List>
+          </Slide>
+
+          <Slide transition={['slide']}>
+            <Image src={require('./img/react-only.png')} width='80%'></Image>
+          </Slide>
+
+          <Slide transition={['slide']}>
+            <Heading size={2} caps fit textColor='white' textFont='primary'>
+              Static Sites
+            </Heading>
+            <Appear>
+              <Heading size={2} caps fit textColor={reactBlue} textFont='primary'>
+                Who's excited?
+              </Heading>
+            </Appear>
+          </Slide>
+
+          <Slide transition={['zoom']}>
+            <VenDiagram />
+          </Slide>
+
+          <Slide transition={['zoom']}>
+            <Appear>
+              <Heading size={2} caps fit textColor='white' textFont='primary'>
+                What are we trying
+              </Heading>
+            </Appear>
+            <Appear>
+              <Heading size={2} caps fit textColor={reactBlue} textFont='primary'>
+                to accomplish?
+              </Heading>
+            </Appear>
+          </Slide>
+
+
+
           <Slide transition={['slide']} bgColor='black' notes='You can even put notes on your slide. How awesome is that?'>
             <Heading size={2} caps fit textColor='primary' textFont='primary'>
               Wait what?
             </Heading>
           </Slide>
+
           <Slide transition={['zoom', 'fade']} bgColor='primary' notes='<ul><li>talk about that</li><li>and that</li></ul>'>
             <CodePane
               lang='jsx'
@@ -66,6 +125,7 @@ export default class Presentation extends React.Component {
               margin='20px auto'
             />
           </Slide>
+
           <Slide transition={['slide']} bgImage={require('./img/react-static-presentation-intro-bg.jpg')}>
             <Appear fid='1'>
               <Heading size={1} caps fit textColor='primary'>
@@ -83,6 +143,7 @@ export default class Presentation extends React.Component {
               </Heading>
             </Appear>
           </Slide>
+
           <Slide transition={['zoom', 'fade']} bgColor='primary'>
             <Heading caps fit>Flexible Layouts</Heading>
             <Layout>
@@ -98,12 +159,14 @@ export default class Presentation extends React.Component {
               </Fill>
             </Layout>
           </Slide>
+
           <Slide transition={['slide']} bgColor='black'>
             <BlockQuote>
               <Quote>Wonderfully formatted quotes</Quote>
               <Cite>Ken Wheeler</Cite>
             </BlockQuote>
           </Slide>
+
           <Slide transition={['spin', 'zoom']} bgColor='tertiary'>
             <Heading caps fit size={1} textColor='primary'>
               Inline Markdown
@@ -117,6 +180,7 @@ You can write inline images, [Markdown Links](http://commonmark.org), paragraph 
               `}
             </Markdown>
           </Slide>
+
           <Slide transition={['slide', 'spin']} bgColor='primary'>
             <Heading caps fit size={1} textColor='tertiary'>
               Smooth
@@ -125,6 +189,7 @@ You can write inline images, [Markdown Links](http://commonmark.org), paragraph 
               Combinable Transitions
             </Heading>
           </Slide>
+
           <Slide transition={['fade']} bgColor='secondary' textColor='primary'>
             <List>
               <Appear><ListItem>Inline style based theme system</ListItem></Appear>
@@ -135,16 +200,19 @@ You can write inline images, [Markdown Links](http://commonmark.org), paragraph 
               <Appear><ListItem>And...</ListItem></Appear>
             </List>
           </Slide>
+
           <Slide transition={['slide']} bgColor='primary'>
             <Heading size={1} caps fit textColor='tertiary'>
               Your presentations are interactive
             </Heading>
           </Slide>
+
           <Slide transition={['spin', 'slide']} bgColor='tertiary'>
             <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
               Made with love in Seattle by
             </Heading>
           </Slide>
+
         </Deck>
       </Spectacle>
     );
