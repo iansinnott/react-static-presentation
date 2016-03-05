@@ -38,6 +38,13 @@ module.exports = {
       test: /\.css$/,
       loader: 'style-loader!css-loader'
     }, {
+      test: /\.styl$/,
+      loaders: [
+        'style',
+        'css?modules&importLoaders=2&localIdentName=[name]__[local]__[hash:base64:6]',
+        'stylus',
+      ],
+    }, {
       test: /\.(png|jpg)$/,
       loader: 'url-loader?limit=8192'
     }, {
