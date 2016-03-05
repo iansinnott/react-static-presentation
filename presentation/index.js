@@ -571,7 +571,12 @@ export const routes = (
               Webpack Plugin
             </Heading>
             <Heading style={{ marginTop: 40 }} fit size={3} textColor='white' textFont='primary'>
-              iansinnott/react-static-webpack-plugin
+              <a
+                target='_blank'
+                style={{ textDecoration: 'none', color: 'white' }}
+                href='https://github.com/iansinnott/react-static-webpack-plugin'>
+                iansinnott/react-static-webpack-plugin
+              </a>
             </Heading>
           </Slide>
 
@@ -632,6 +637,12 @@ export const routes = (
             <Heading style={{ fontWeight: 300 }} size={2} textColor='white' textFont='primary'>
               Thanks
             </Heading>
+            <p style={{
+              textAlign: 'left',
+              fontSize: '3.6rem',
+              color: reactBlue,
+            }}>Slides</p>
+            <p style={{ fontSize: '2.4rem', textAlign: 'left' }}>https://github.com/iansinnott/react-static-presentation</p>
             <p style={{
               textAlign: 'left',
               fontSize: '3.6rem',
