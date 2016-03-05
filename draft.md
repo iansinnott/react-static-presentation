@@ -286,3 +286,17 @@ But how?
 * Serverless
   * This really (to me) seems to be where the web should be heading for anything other than large complex web apps that really do need a normal back-end. For small apps having this functionality on demand is so much more efficient than have a server constantly running utilizing 1% of it's compute power.
 
+--- 
+
+# Resources
+
+* React Static Webpack Plugin
+* React Static Boilerplate
+* Staticgen https://www.staticgen.com/
+
+---
+
+# Conclusion
+
+* github.com/iansinnott
+* @ian_989
