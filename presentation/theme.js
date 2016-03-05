@@ -244,7 +244,7 @@ merge(screen, {
       textDecoration: "none"
     },
     listItem: {
-      fontSize: "2.66rem"
+      fontSize: "3.66rem"
     },
     list: {
       textAlign: "left",

@@ -93,11 +93,11 @@ export default class Presentation extends React.Component {
             </Appear>
           </Slide>
 
-          <Slide transition={['zoom']}>
+          <Slide transition={['zoom']} transitionDuration={2000}>
             <VenDiagram />
           </Slide>
 
-          <Slide transition={['zoom']}>
+          <Slide transition={['fade']}>
             <Appear>
               <Heading size={2} caps fit textColor='white' textFont='primary'>
                 What are we trying
@@ -110,13 +110,67 @@ export default class Presentation extends React.Component {
             </Appear>
           </Slide>
 
-
-
-          <Slide transition={['slide']} bgColor='black' notes='You can even put notes on your slide. How awesome is that?'>
-            <Heading size={2} caps fit textColor='primary' textFont='primary'>
-              Wait what?
+          <Slide transition={['slide']}>
+            <Heading size={2} textColor={reactBlue} textFont='primary'>
+              Wants
             </Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  Indexable by search engines
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Performant
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  (Relatively) Secure
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Easily deployable
+                </ListItem>
+              </Appear>
+            </List>
           </Slide>
+
+          <Slide transition={['slide']}>
+            <Heading size={2} textColor={reactBlue} textFont='primary'>
+              Develpoer Experience
+            </Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  Full power of JavaScript
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Familiar
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Write once
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Hot reloading, modularized code, ES6, etc
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
+
+
+
+
+
+
 
           <Slide transition={['zoom', 'fade']} bgColor='primary' notes='<ul><li>talk about that</li><li>and that</li></ul>'>
             <CodePane
