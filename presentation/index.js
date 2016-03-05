@@ -35,7 +35,7 @@ import theme, { reactBlue } from './theme.js';
 const VenDiagram = React.createClass({
   render() {
     return (
-      <div className={s.VenDiagram}>
+      <div className={cx('VenDiagram', this.props.className)}>
         <div className={cx('static-ven')}>Static</div>
         <div className={cx('react-ven')}>React</div>
       </div>
@@ -166,19 +166,191 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
 
-
-
-
-
-
-
-          <Slide transition={['zoom', 'fade']} bgColor='primary' notes='<ul><li>talk about that</li><li>and that</li></ul>'>
-            <CodePane
-              lang='jsx'
-              source={require('raw!../assets/deck.example')}
-              margin='20px auto'
-            />
+          <Slide transition={['zoom']} transitionDuration={2000}>
+            <VenDiagram className={'ven-two'} />
           </Slide>
+
+          <Slide transition={['slide']}>
+            <Heading size={3} textColor='white'>Has this been done before?</Heading>
+          </Slide>
+
+          <Slide className={cx('spectacle-content')} transition={['slide']}>
+            <Image src={require('./img/react.svg')} width='40%'></Image>
+            <Heading size={2} caps textColor={reactBlue} textFont='primary'>
+              Diving in
+            </Heading>
+          </Slide>
+
+          <Slide transition={['slide']}>
+            <Heading size={2} caps textColor={reactBlue} textFont='primary'>
+              Existing Tools
+            </Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  ReactDOM
+                  <List>
+                    <ListItem>
+                      renderToString
+                    </ListItem>
+                    <ListItem>
+                      renderToStaticMarkup
+                    </ListItem>
+                  </List>
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Node
+                  <List>
+                    <ListItem>
+                      fs.writeFile
+                    </ListItem>
+                  </List>
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
+
+          <Slide className={cx('spectacle-content', 'codepane')} transition={['fade']} bgColor='primary'>
+            <CodePane
+              style={{ fontSize: '1.8rem' }}
+              lang='jsx'
+              margin='20px auto'>
+              {`
+import React from 'react';
+
+const App = () => (
+  <div className='App'>
+    <h1>Hi there</h1>
+  </div>
+);
+              `.trim()}
+            </CodePane>
+          </Slide>
+
+          <Slide className={cx('spectacle-content', 'codepane')} transition={['fade']} bgColor='primary'>
+            <CodePane
+              style={{ fontSize: '1.2rem' }}
+              lang='jsx'
+              margin='20px auto'>
+              {`
+import React from 'react';
+import ReactDOM from 'react-dom/server';
+import fs from 'fs';
+
+const App = () => (
+  <div className='App'>
+    <h1>Hi there</h1>
+  </div>
+);
+
+fs.writeFileSync('index.html', ReactDOM.renderToString(<App />));
+              `.trim()}
+            </CodePane>
+          </Slide>
+
+          <Slide className={cx('spectacle-content', 'codepane')} transition={['fade']} bgColor='primary'>
+            <Heading size={3} textColor='white' textFont='primary'>
+              Hm...
+            </Heading>
+            <CodePane
+              style={{ fontSize: '1.2rem' }}
+              lang='jsx'
+              margin='20px auto'>
+              {`
+<div class="App" data-reactid=".1p6juf4im0w" data-react-checksum="943857564">
+  <h1 data-reactid=".1p6juf4im0w.0">Hi there</h1>
+</div>
+              `.trim()}
+            </CodePane>
+          </Slide>
+
+          <Slide className={cx('spectacle-content', 'codepane')} transition={['fade']} bgColor='primary'>
+            <CodePane
+              style={{ fontSize: '1.2rem' }}
+              lang='jsx'
+              margin='20px auto'>
+              {`
+import React from 'react';
+
+const Html = props => {
+  const html = { __html: props.body };
+  return (
+    <html lang='en'>
+      <body>
+        <div id='root' dangerouslySetInnerHTML={html} />
+        <script src='/app.js'></script>
+      </body>
+    </html>
+  );
+};
+              `.trim()}
+            </CodePane>
+          </Slide>
+
+          <Slide className={cx('spectacle-content', 'codepane')} transition={['fade']} bgColor='primary'>
+            <CodePane
+              style={{ fontSize: '1.2rem' }}
+              lang='jsx'
+              margin='20px auto'>
+              {`
+import ReactDOM from 'react-dom/server';
+import fs from 'fs';
+import App from './App';
+
+const body = ReactDOM.renderToString(<App />);
+
+const doc = '<!doctype html>' + ReactDOM.renderToStaticMarkup(
+  <Html body={body} />
+);
+
+fs.writeFileSync('index.html', doc);
+              `.trim()}
+            </CodePane>
+          </Slide>
+
+          <Slide className={cx('spectacle-content', 'codepane')} transition={['fade']} bgColor='primary'>
+            <CodePane
+              style={{ fontSize: '1.2rem' }}
+              lang='jsx'
+              margin='20px auto'>
+              {`
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>App</title>
+    <link rel="stylesheet" href="/app.css">
+  </head>
+  <body>
+    <div id="root">
+      <div class="App" data-reactid=".1p6juf4im0w" data-react-checksum="943857564">
+        <h1 data-reactid=".1p6juf4im0w.0">Hi there</h1>
+      </div>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>
+              `.trim()}
+            </CodePane>
+          </Slide>
+
+          <Slide className={cx('spectacle-content')} transition={['slide']}>
+            <Image src={require('./img/app-to-index.html.png')} width='80%'></Image>
+          </Slide>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           <Slide transition={['slide']} bgImage={require('./img/react-static-presentation-intro-bg.jpg')}>
             <Appear fid='1'>

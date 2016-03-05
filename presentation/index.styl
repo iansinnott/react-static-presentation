@@ -3,6 +3,9 @@ spaceline = 20px
 react-blue = #00d8ff
 fitc-red = #D7000F
 
+li ul li
+  margin-left 70px
+
 .title
   text-align left
   padding-left spaceline * 2
@@ -34,6 +37,7 @@ fitc-red = #D7000F
   bottom spaceline
   right spaceline
 
+  // Overriding the inline styles with important
 .spectacle-content
   transform none !important
   max-width none !important
@@ -62,13 +66,17 @@ fitc-red = #D7000F
   &:after
     position absolute
     display block
-    content '?'
+    content '🤔'
     top 50%
     left 50%
     z-index 99
     transform translate(-50%, -50%)
     font-size 7rem
     color react-blue
+
+.ven-two
+  &:after
+    content '✨'
 
 .static-ven
 .react-ven
@@ -85,11 +93,11 @@ fitc-red = #D7000F
   text-transform uppercase
 
 .static-ven
-  left 8%
+  left 7%
   background #261E53
   border 1px solid #9013FE
 
 .react-ven
-  right 8%
+  right 6%
   background transparentify(react-blue, 0.4)
   border 1px solid #B2F5FF

@@ -212,7 +212,8 @@ merge(screen, {
         fontSize: "4.9rem",
         lineHeight: 1,
         fontWeight: "bold",
-        margin: "0.5rem auto"
+        margin: "0.5rem auto",
+        fontFamily: 'Open Sans',
       },
       h4: {
         color: "black",
