@@ -10,6 +10,7 @@ import {
   Appear,
   BlockQuote,
   Cite,
+  Code,
   CodePane,
   Deck,
   Fill,
@@ -32,12 +33,20 @@ require('spectacle/lib/themes/default/index.css');
 
 import theme, { reactBlue } from './theme.js';
 
+const StaticCircle = () => (
+  <div className={cx('static-ven')}>Static</div>
+);
+
+const ReactCircle = () => (
+  <div className={cx('react-ven')}>React</div>
+);
+
 const VenDiagram = React.createClass({
   render() {
     return (
       <div className={cx('VenDiagram', this.props.className)}>
-        <div className={cx('static-ven')}>Static</div>
-        <div className={cx('react-ven')}>React</div>
+        <StaticCircle />
+        <ReactCircle />
       </div>
     );
   },
@@ -61,8 +70,9 @@ export default class Presentation extends React.Component {
             <Heading className={cx('title', 'second')} size={1} caps lineHeight={1} textColor='white'>
               With React
             </Heading>
-            <div className={cx('red-bar')} />
+            <div className={cx('red-bar')} /> {
             <Text className={cx('tal')} textColor='white' caps textSize='1.5em' margin='20px 0px 0px' bold>Ian Sinnott</Text>
+            }
             <img className={cx('sponsors')} src={require('./img/sponsor-logos.png')} />
             <img className={cx('wifi')} src={require('./img/wifi.png')} />
           </Slide>
@@ -138,9 +148,13 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
 
+          <Slide transition={['slide']} transitionDuration={2000}>
+            <StaticCircle />
+          </Slide>
+
           <Slide transition={['slide']}>
             <Heading size={2} textColor={reactBlue} textFont='primary'>
-              Develpoer Experience
+              Developer Experience
             </Heading>
             <List>
               <Appear>
@@ -150,7 +164,7 @@ export default class Presentation extends React.Component {
               </Appear>
               <Appear>
                 <ListItem>
-                  Familiar
+                  Use existing knowledge
                 </ListItem>
               </Appear>
               <Appear>
@@ -166,7 +180,11 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
 
-          <Slide transition={['zoom']} transitionDuration={2000}>
+          <Slide transition={['fade']} transitionDuration={2000}>
+            <ReactCircle />
+          </Slide>
+
+          <Slide transition={['fade']} transitionDuration={2000}>
             <VenDiagram className={'ven-two'} />
           </Slide>
 
@@ -318,10 +336,6 @@ fs.writeFileSync('index.html', doc);
               {`
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>App</title>
-    <link rel="stylesheet" href="/app.css">
-  </head>
   <body>
     <div id="root">
       <div class="App" data-reactid=".1p6juf4im0w" data-react-checksum="943857564">
@@ -339,104 +353,289 @@ fs.writeFileSync('index.html', doc);
             <Image src={require('./img/app-to-index.html.png')} width='80%'></Image>
           </Slide>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <Slide transition={['slide']} bgImage={require('./img/react-static-presentation-intro-bg.jpg')}>
-            <Appear fid='1'>
-              <Heading size={1} caps fit textColor='primary'>
-                Full Width
-              </Heading>
-            </Appear>
-            <Appear fid='2'>
-              <Heading size={1} caps fit textColor='tertiary'>
-                Adjustable Darkness
-              </Heading>
-            </Appear>
-            <Appear fid='3'>
-              <Heading size={1} caps fit textColor='primary'>
-                Background Imagery
-              </Heading>
-            </Appear>
-          </Slide>
-
-          <Slide transition={['zoom', 'fade']} bgColor='primary'>
-            <Heading caps fit>Flexible Layouts</Heading>
-            <Layout>
-              <Fill>
-                <Heading size={4} caps textColor='secondary' bgColor='white' margin={10}>
-                  Left
-                </Heading>
-              </Fill>
-              <Fill>
-                <Heading size={4} caps textColor='secondary' bgColor='white' margin={10}>
-                  Right
-                </Heading>
-              </Fill>
-            </Layout>
-          </Slide>
-
-          <Slide transition={['slide']} bgColor='black'>
-            <BlockQuote>
-              <Quote>Wonderfully formatted quotes</Quote>
-              <Cite>Ken Wheeler</Cite>
-            </BlockQuote>
-          </Slide>
-
-          <Slide transition={['spin', 'zoom']} bgColor='tertiary'>
-            <Heading caps fit size={1} textColor='primary'>
-              Inline Markdown
+          <Slide transition={['slide']}>
+            <Heading size={2} textColor={reactBlue} textFont='primary'>
+              But...
             </Heading>
-            <Markdown>
-              {`
-You can write inline images, [Markdown Links](http://commonmark.org), paragraph text and most other markdown syntax
-* Lists too!
-* With ~~strikethrough~~ and _italic_
-* And lets not forget **bold**
-              `}
-            </Markdown>
-          </Slide>
-
-          <Slide transition={['slide', 'spin']} bgColor='primary'>
-            <Heading caps fit size={1} textColor='tertiary'>
-              Smooth
-            </Heading>
-            <Heading caps fit size={1} textColor='secondary'>
-              Combinable Transitions
-            </Heading>
-          </Slide>
-
-          <Slide transition={['fade']} bgColor='secondary' textColor='primary'>
             <List>
-              <Appear><ListItem>Inline style based theme system</ListItem></Appear>
-              <Appear><ListItem>Autofit text</ListItem></Appear>
-              <Appear><ListItem>Flexbox layout system</ListItem></Appear>
-              <Appear><ListItem>React-Router navigation</ListItem></Appear>
-              <Appear><ListItem>PDF export</ListItem></Appear>
-              <Appear><ListItem>And...</ListItem></Appear>
+              <Appear>
+                <ListItem>
+                  Developer Experience?
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Multi-page sites?
+                </ListItem>
+              </Appear>
             </List>
           </Slide>
 
-          <Slide transition={['slide']} bgColor='primary'>
-            <Heading size={1} caps fit textColor='tertiary'>
-              Your presentations are interactive
+          <Slide transition={['slide']}>
+            <Heading size={1} caps fit textColor={reactBlue} textFont='primary'>
+              React Router
             </Heading>
           </Slide>
 
-          <Slide transition={['spin', 'slide']} bgColor='tertiary'>
-            <Heading size={1} caps fit lineHeight={1.5} textColor='primary'>
-              Made with love in Seattle by
+          <Slide className={cx('spectacle-content', 'codepane')} transition={['fade']} bgColor='primary'>
+            <CodePane
+              style={{ fontSize: '1.2rem' }}
+              lang='jsx'
+              margin='20px auto'>
+              {`
+import React from 'react';
+import { Route, IndexRoute } from 'react-router';
+
+import { App, Home, NotFound } from './components/App.js';
+import { About } from './components/About.js';
+
+export const routes = (
+  <Route path='/' component={App}>
+    <IndexRoute component={Home} />
+    <Route path='about' component={About} />
+    <Route path='*' component={NotFound} />
+  </Route>
+);
+              `.trim()}
+            </CodePane>
+          </Slide>
+
+          <Slide transition={['slide']}>
+            <Heading size={2} textColor={reactBlue} textFont='primary'>
+              React Router
             </Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  Describes your client side routes
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Describes nested routes
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Already works on the server
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
+
+
+          <Slide className={cx('spectacle-content', 'codepane')} transition={['fade']} bgColor='primary'>
+            <CodePane
+              style={{ fontSize: '1.2rem' }}
+              lang='jsx'
+              margin='20px auto'>
+              {`
+import ReactDOM from 'react-dom/server'
+import { match, RouterContext } from 'react-router'
+import routes from './routes'
+
+const location = '/about';
+
+match({ routes, location }, (error, redirectLocation, renderProps) => {
+  if (renderProps) {
+    ReactDOM.renderToString(<RouterContext {...renderProps} />);
+  } else {
+    console.log('Not Found');
+  }
+});
+              `.trim()}
+            </CodePane>
+          </Slide>
+
+          <Slide className={cx('spectacle-content', 'codepane')} transition={['fade']} bgColor='primary'>
+            <CodePane
+              style={{ fontSize: '1.6rem' }}
+              lang='jsx'
+              margin='20px auto'>
+              {`
+export const routes = (
+  <Route path='/' component={App}>           // => '/'      => index.html
+    <IndexRoute component={Home} />          // => '/'      => [duplicate]
+    <Route path='about' component={About} /> // => '/about' => about.html
+    <Route path='*' component={NotFound} />  // => n/a      => 404.html
+  </Route>
+);
+              `.trim()}
+            </CodePane>
+          </Slide>
+
+          <Slide transition={['fade']}>
+            <Heading size={2} textColor={reactBlue} textFont='primary'>
+              Developer Experience
+            </Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  Full power of JavaScript
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Use existing knowledge
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Write once
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Hot reloading, modularized code, ES6, etc
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
+
+          <Slide transition={['fade']}>
+            <Heading size={2} textColor={reactBlue} textFont='primary'>
+              Developer Experience
+            </Heading>
+            <List>
+              <ListItem>
+                <span style={{ color: '#828282', textDecoration: 'line-through' }}>
+                  Full power of JavaScript
+                </span>
+              </ListItem>
+              <ListItem>
+                <span style={{ color: '#828282', textDecoration: 'line-through' }}>
+                  Use existing knowledge
+                </span>
+              </ListItem>
+              <ListItem>
+                Write once?
+              </ListItem>
+              <ListItem>
+                Hot reloading, modularized code, ES6, etc?
+              </ListItem>
+            </List>
+          </Slide>
+
+          <Slide bgColor='white' transition={['slide']}>
+            <Heading size={1} textFont='primary'>
+              <Image src={require('./img/webpack.png')} width='80%'></Image>
+            </Heading>
+          </Slide>
+
+          <Slide transition={['fade']}>
+            <Heading size={2} textColor={reactBlue} textFont='primary'>
+              Developer Experience
+            </Heading>
+            <List>
+              <ListItem>
+                <span style={{ color: '#828282', textDecoration: 'line-through' }}>
+                  Full power of JavaScript
+                </span>
+              </ListItem>
+              <ListItem>
+                <span style={{ color: '#828282', textDecoration: 'line-through' }}>
+                  Use existing knowledge
+                </span>
+              </ListItem>
+              <ListItem>
+                <span style={{ color: '#828282', textDecoration: 'line-through' }}>
+                  Write once?
+                </span>
+              </ListItem>
+              <ListItem>
+                <span style={{ color: '#828282', textDecoration: 'line-through' }}>
+                  Hot reloading, modularized code, ES6, etc?
+                </span>
+              </ListItem>
+            </List>
+          </Slide>
+
+          <Slide transition={['slide']}>
+            <Heading size={2} textColor={reactBlue} textFont='primary'>
+              How?
+            </Heading>
+            <List>
+              <Appear><ListItem>Turn React Router config into a list of routes</ListItem></Appear>
+              <Appear><ListItem>Iterate over that list, match with React Router</ListItem></Appear>
+              <Appear><ListItem>Save strings to html files on disk</ListItem></Appear>
+            </List>
+          </Slide>
+
+          <Slide transition={['slide']}>
+            <Heading size={2} textColor={reactBlue} textFont='primary'>
+              Webpack Plugin
+            </Heading>
+            <Heading style={{ marginTop: 40 }} fit size={3} textColor='white' textFont='primary'>
+              iansinnott/react-static-webpack-plugin
+            </Heading>
+          </Slide>
+
+          <Slide transition={['slide']}>
+            <Heading size={2} textColor={reactBlue} textFont='primary'>
+              What's it look like
+            </Heading>
+            <List>
+              <Appear><ListItem>Build front-end app</ListItem></Appear>
+              <Appear><ListItem><Code style={{ color: 'white'}}>npm run build</Code></ListItem></Appear>
+              <Appear><ListItem>Deploy full static website to the host of your choice</ListItem></Appear>
+            </List>
+          </Slide>
+
+          <Slide transition={['slide']}>
+            <Heading size={1} caps fit textColor={reactBlue} textFont='primary'>
+              Servers
+            </Heading>
+            <Heading size={1} caps fit textColor='white' textFont='primary'>
+              Are still cool
+            </Heading>
+            <Appear>
+              <Heading size={1} caps fit textColor={reactBlue} textFont='primary'>
+                ...but do you need one?
+              </Heading>
+            </Appear>
+          </Slide>
+
+          <Slide transition={['slide']}>
+            <Heading size={2} textColor={reactBlue} textFont='primary'>
+              Static site use cases
+            </Heading>
+            <List>
+              <Appear><ListItem>Blogs</ListItem></Appear>
+              <Appear><ListItem>Marketing websites</ListItem></Appear>
+              <Appear><ListItem>Documentation</ListItem></Appear>
+              <Appear><ListItem>Email signup pages</ListItem></Appear>
+              <Appear><ListItem>Contact forms</ListItem></Appear>
+              <Appear><ListItem>Etc...</ListItem></Appear>
+            </List>
+          </Slide>
+
+          <Slide transition={['slide']}>
+            <Heading size={2} textColor={reactBlue} textFont='primary'>
+              The Static Ecosystem
+            </Heading>
+            <List>
+              <Appear><ListItem>Online form services</ListItem></Appear>
+              <Appear><ListItem>Static site hosts</ListItem></Appear>
+              <Appear><ListItem>Comment services</ListItem></Appear>
+              <Appear><ListItem>AWS Lambda + API Gateway</ListItem></Appear>
+              <Appear><ListItem>Serverless</ListItem></Appear>
+            </List>
+          </Slide>
+
+          <Slide transition={['zoom']}>
+            <img className={cx('face')} src={require('./img/face.png')} />
+            <Heading style={{ fontWeight: 300 }} size={2} textColor='white' textFont='primary'>
+              Thanks
+            </Heading>
+            <p style={{
+              textAlign: 'left',
+              fontSize: '3.6rem',
+              color: reactBlue,
+            }}>Questions?</p>
+            <List>
+              <ListItem>@ian_989</ListItem>
+              <ListItem>github.com/iansinnott</ListItem>
+            </List>
           </Slide>
 
         </Deck>
