@@ -208,4 +208,81 @@ Webpack gives us a ton of benefits in the DX department
 
 Anyway, I built this plugin so that you can specifcy an 'entrypoint' that exports a `Routes` component and all your routes will be generated as static html files \o/
 
+---
+
+```js
+import React from 'react';
+import { Route, IndexRoute } from 'react-router';
+
+import { App, Home, NotFound } from './components/App.js';
+import { About } from './components/About.js';
+
+export const routes = (
+  <Route path='/' title='App' component={App}>
+    <IndexRoute component={Home} />
+    <Route path='about' title='App - About' component={About} />
+    <Route path='*' title='404: Not Found' component={NotFound} />
+  </Route>
+);
+```
+
+Will yield something along the lines of this:
+
+```
+     Asset       Size  Chunks             Chunk Names
+    app.js     180 kB       0  [emitted]  app
+   app.css    3.22 kB       0  [emitted]  app
+index.html    1.64 kB          [emitted]
+about.html       1 kB          [emitted]
+  404.html  805 bytes          [emitted]
+```
+
+---
+
+# Dynamic Routes
+
+We don't want to lose out on any of the functionality of standard static site generators right?
+Turns out we don't have to. We can make this happen with a little creativiity and webpack contexts.
+
+---
+
+# React static webpack plugin
+
+* Proof of concept, would love it to expand
+
+---
+
+# Static content generation should be automatic
+
+You shouldn't have to think about it. It should be much like compiling es6, it just works
+
+---
+
+# Servers are still cool
+
+---
+
+# When to choose static vs dynamic
+
+Go over use cases...
+
+* personal blogs (i.e. where you don't need a cms b/c you're a coder)
+* marketing websites
+* documentation
+* web pages with some, but minimal server-side logic
+  * Email collection
+  * Contact forms
+  * Etc...
+
+---
+
+But how?
+
+# Server alternatives
+
+* iframes (ew, but still an option)
+* static site hosts (like netlify)
+* AWS lambda + api gateway...
+* Serverless
+  * This really (to me) seems to be where the web should be heading for anything other than large complex web apps that really do need a normal back-end. For small apps having this functionality on demand is so much more efficient than have a server constantly running utilizing 1% of it's compute power.
 
