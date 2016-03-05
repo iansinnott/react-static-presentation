@@ -1,7 +1,9 @@
 // Import React
 import React from 'react';
+import classnames from 'classnames/bind';
 
 import s from './index.styl';
+const cx = classnames.bind(s);
 
 // Import Spectacle Core tags
 import {
@@ -36,17 +38,21 @@ export default class Presentation extends React.Component {
       <Spectacle theme={theme}>
         <Deck transition={['zoom', 'slide']} transitionDuration={500}>
           <Slide
+            className={cx('spectacle-content')}
             transition={['zoom']}
             bgImage={require('./img/react-static-presentation-intro-bg.jpg')}
             bgColor='primary'>
-            <Heading className={s.title} size={1} caps lineHeight={1} textColor='white'>
+            <img className={cx('fitc')} src={require('./img/fitc-logo.png')} />
+            <Heading className={cx('title', 'first')} size={1} caps lineHeight={1} textColor='white'>
               Building Static Sites
             </Heading>
-            <Heading size={1} caps lineHeight={1} textColor='white'>
+            <Heading className={cx('title', 'second')} size={1} caps lineHeight={1} textColor='white'>
               With React
             </Heading>
-            <div style={{ margin: '20px 0' }}>--------</div>
-            <Text textColor='white' textSize='1.5em' margin='20px 0px 0px' bold>Ian Sinnott</Text>
+            <div className={cx('red-bar')} />
+            <Text className={cx('tal')} textColor='white' caps textSize='1.5em' margin='20px 0px 0px' bold>Ian Sinnott</Text>
+            <img className={cx('sponsors')} src={require('./img/sponsor-logos.png')} />
+            <img className={cx('wifi')} src={require('./img/wifi.png')} />
           </Slide>
           <Slide transition={['slide']} bgColor='black' notes='You can even put notes on your slide. How awesome is that?'>
             <Heading size={2} caps fit textColor='primary' textFont='primary'>

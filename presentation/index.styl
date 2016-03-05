@@ -1,2 +1,52 @@
+spaceline = 20px
+
+fitc-red = #D7000F
+
 .title
   text-align left
+  padding-left spaceline * 2
+
+.second
+  position relative
+  &:after
+    content ''
+    width 200px
+    height 1px
+    background fitc-red
+    z-index 9
+
+.fitc
+  display block
+  position absolute
+  top spaceline
+  left spaceline
+
+.sponsors
+  display block
+  position absolute
+  bottom spaceline * 3
+  right spaceline * 3
+
+.wifi
+  display block
+  position absolute
+  bottom spaceline
+  right spaceline
+
+.spectacle-content
+  transform none !important
+  max-width none !important
+  max-height none !important
+
+.tal
+  text-align left
+  font-weight 300 !important
+  padding-left spaceline * 2
+
+.red-bar
+  margin-top spaceline * 2
+  margin-bottom spaceline * 2
+  height 5px
+  background fitc-red
+  width 200px
+  border-radius 50px

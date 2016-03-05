@@ -41,7 +41,10 @@ merge(screen, {
       zIndex: 9999,
       background: "none",
       border: "none",
-      outline: 0
+      outline: 0,
+
+      // Custom
+      display: 'none',
     },
     prevIcon: {
       fill: colors.quartenary
@@ -54,7 +57,10 @@ merge(screen, {
       zIndex: 9999,
       background: "none",
       border: "none",
-      outline: 0
+      outline: 0,
+
+      // Custom
+      display: 'none',
     },
     nextIcon: {
       fill: colors.quartenary
@@ -67,7 +73,10 @@ merge(screen, {
         bottom: "5px",
         left: "50%",
         transition: "all 1s ease-in-out 0.2s",
-        zIndex: 1000
+        zIndex: 1000,
+
+        // Custom
+        display: 'none',
       },
       pacman: {
         position: "absolute",
