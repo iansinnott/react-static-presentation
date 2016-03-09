@@ -8,7 +8,6 @@ li ul li
 
 .title
   text-align left
-  padding-left spaceline * 2
 
 .second
   position relative
@@ -18,6 +17,9 @@ li ul li
     height 1px
     background fitc-red
     z-index 9
+
+.hidden
+  visibility hidden
 
 .fitc
   display block
@@ -46,13 +48,12 @@ li ul li
 .tal
   text-align left
   font-weight 300 !important
-  padding-left spaceline * 2
 
 .red-bar
   margin-top spaceline * 2
   margin-bottom spaceline * 2
   height 5px
-  background fitc-red
+  background react-blue
   width 200px
   border-radius 50px
 
@@ -66,7 +67,7 @@ li ul li
   &:after
     position absolute
     display block
-    content '🤔'
+    content ''
     top 50%
     left 50%
     z-index 99
@@ -74,7 +75,10 @@ li ul li
     font-size 7rem
     color react-blue
 
-.ven-two
+.ven-face
+  &:after
+    content '🤔'
+.ven-stars
   &:after
     content '✨'
 
@@ -104,3 +108,21 @@ li ul li
 
 .strike
   text-decoration strikethrough
+
+.ianList
+  margin 0 auto
+  margin-top spaceline * 2
+  width 35%
+
+  li
+    list-style none
+    margin-bottom spaceline
+
+  i
+    margin-right spaceline
+
+  :global .fa-heart
+    color red
+
+.repos
+  text-align left

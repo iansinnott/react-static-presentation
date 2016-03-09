@@ -3,11 +3,40 @@ import { Link, IndexLink } from 'react-router';
 import 'normalize.css';
 
 // Using CSS Modules so we assign the styles to a variable
+import classnames from 'classnames/bind';
 import s from './App.styl';
+const cx = classnames.bind(s);
+
 import logo from './react-logo.png';
 
 // Favicon link is in the template, this just makes webpack package it up for us
 import './favicon.ico';
+
+export const Contact = React.createClass({
+  handleSubmit(e) {
+    e.preventDefault();
+    const email = e.target.elements.email.value.trim();
+    const message = e.target.elements.message.value.trim();
+
+    console.log(`Email: ${email}`);
+    console.log(`Message: ${message}`);
+  },
+
+  render() {
+    return (
+      <div className={cx('Contact', 'page')}>
+        <div className={s.siteTitle}>
+          <h1>Contact</h1>
+        </div>
+        <form onSubmit={this.handleSubmit}>
+          <input name='email' type='email' placeholder='Email' />
+          <textarea name='message' placeholder='Message...' />
+          <button type='submit'>Send</button>
+        </form>
+      </div>
+    );
+  },
+});
 
 export const Home = React.createClass({
   render() {
@@ -15,9 +44,9 @@ export const Home = React.createClass({
       <div className={s.page}>
         <div className={s.siteTitle}>
           <img src={logo} alt='React Logo' />
-          <h1>React Static Boilerplate</h1>
+          <h1>React Static</h1>
         </div>
-        <p>Why React static?</p>
+        <p>Why static sites with React?</p>
         <ul>
           <li><span className={s.hl}>Dev</span> friendly</li>
           <li><span className={s.hl}>User</span> friendly</li>
@@ -32,7 +61,10 @@ export const NotFound = React.createClass({
   render() {
     return (
       <div className={s.page}>
-        <h4>Not found</h4>
+        <div className={s.siteTitle}>
+          <h1>Not found</h1>
+        </div>
+        <p>Click <Link to='/'>here</Link> to go back to the home page.</p>
       </div>
     );
   },
@@ -53,6 +85,7 @@ export const App = React.createClass({
         <nav className={s.nav}>
           <IndexLink to='/' activeClassName={s.active}>Home</IndexLink>
           <Link to='/about' activeClassName={s.active}>About</Link>
+          <Link to='/contact' activeClassName={s.active}>Contact</Link>
         </nav>
         {this.props.children}
       </div>

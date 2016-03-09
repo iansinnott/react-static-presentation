@@ -37,7 +37,16 @@ module.exports = {
     }, {
       test: /\.css$/,
       loader: 'style-loader!css-loader'
-    }, {
+    },
+    {
+      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loaders: ['url?limit=10000&mimetype=application/font-woff'],
+    },
+    {
+      test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loaders: ['file'],
+    },
+    {
       test: /\.styl$/,
       loaders: [
         'style',

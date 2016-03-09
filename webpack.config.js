@@ -38,7 +38,16 @@ module.exports = {
         'css?modules&importLoaders=2&localIdentName=[name]__[local]__[hash:base64:6]',
         'stylus',
       ],
-    }, {
+    },
+    {
+      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loaders: ['url?limit=10000&mimetype=application/font-woff'],
+    },
+    {
+      test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loaders: ['file'],
+    },
+    {
       test: /\.svg$/,
       loader: 'url?limit=10000&mimetype=image/svg+xml',
       include: path.join(__dirname, 'presentation', 'img')

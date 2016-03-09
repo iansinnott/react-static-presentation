@@ -76,19 +76,24 @@ The intersection of these circles is what we're going to explore in the rest of 
 
 ---
 
-# A brief aside
+# Has this been done before?
  
-I am not the first person to think that building static sites with react is a great idea. There are other projects out there, but when I explored the ecosystem late last year I didn't find any existing solutions that accomplished everything I wanted.
+---
 
-I will discuss this in more detail later.
+# Yup
+
+img
+img
+img
+img
+img
 
 ---
 
-# Diving in
+# So, we're done?
 
-Now that we know what the why, let's dive in to the how.
-
-Let's take a React copmonent and render out a single `index.html` file.
+* Not quite. It doesn't yet feel universal.
+* Not re-using enough of our existing knowledge. I.e. still learning a new framework
 
 ---
 

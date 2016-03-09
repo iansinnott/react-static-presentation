@@ -2,6 +2,7 @@ import createTheme from 'spectacle/lib/themes/default';
 import merge from 'lodash/merge';
 
 export const reactBlue = '#00d8ff';
+export const githubGray = '#fafafa';
 
 const colors = {
   primary: '#222',
@@ -176,7 +177,8 @@ merge(screen, {
         fontSize: "0.8rem",
         fontWeight: "normal",
         minWidth: "100%",
-        maxWidth: 800
+        maxWidth: 800,
+        backgroundColor: 'inherit',
       },
       code: {
         textAlign: "left",
