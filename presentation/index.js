@@ -444,6 +444,23 @@ export const routes = (
               {`
 export const routes = (
   <Route path='/' component={App}>
+    <IndexRoute component={Home} />
+    <Route path='about' component={About} />
+    <Route path='*' component={NotFound} />
+  </Route>
+);
+              `.trim()}
+            </CodePane>
+          </Slide>
+
+          <Slide className={cx('spectacle-content', 'codepane')} transition={['fade']} bgColor='primary'>
+            <CodePane
+              style={{ fontSize: '1.4rem' }}
+              lang='jsx'
+              margin='20px auto'>
+              {`
+export const routes = (
+  <Route path='/' component={App}>
     <IndexRoute component={Home} />          // => index.html
     <Route path='about' component={About} /> // => about.html
     <Route path='*' component={NotFound} />  // => 404.html
@@ -532,13 +549,6 @@ export const routes = (
             </Appear>
           </Slide>
 
-
-
-
-
-
-
-
           <Slide transition={['slide']}>
             <Heading size={2} textColor={reactBlue} textFont='primary'>
               Static site use cases
@@ -564,6 +574,15 @@ export const routes = (
               <Appear><ListItem>AWS Lambda + API Gateway</ListItem></Appear>
               <Appear><ListItem>Serverless</ListItem></Appear>
             </List>
+          </Slide>
+
+          <Slide transition={['slide']}>
+            <Heading size={1} caps fit textColor={reactBlue} textFont='primary'>
+              Static
+            </Heading>
+            <Heading size={1} caps fit textColor='white' textFont='primary'>
+              is cool
+            </Heading>
           </Slide>
 
           <Slide transition={['zoom']}>
