@@ -1,6 +1,6 @@
-# Static Site With React Router
+# Blog Example [Incomplete]
 
-The boilerplate from https://github.com/iansinnott/react-static-boilerplate.
+NOTE: This example isn't entirely complete. It doesn't yet demonstrate how to set dynamic titles or how to use post metadata in the post listing.
 
 **Quick Start:**
 
