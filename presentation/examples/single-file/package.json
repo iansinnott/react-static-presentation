@@ -2,7 +2,7 @@
   "name": "react-static-initial-render",
   "version": "1.0.0",
   "scripts": {
-    "build": "BABEL_ENV=production babel-node ./initial-render.js"
+    "build": "BABEL_ENV=production babel-node index.js"
   },
   "author": "Ian Sinnott",
   "license": "MIT",
