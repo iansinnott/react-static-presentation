@@ -43,7 +43,7 @@ export const Home = React.createClass({
 export const NotFound = React.createClass({
   render() {
     return (
-      <div className={s.page}>
+      <div className={cx('NotFound', 'page')}>
         <div className={s.siteTitle}>
           <h1>Not found</h1>
         </div>
