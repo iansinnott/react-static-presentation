@@ -279,31 +279,6 @@ const App = () => (
 
 
 
-          <Slide transition={['slide']}>
-            <Heading size={3} textColor='white'>Has this been done before?</Heading>
-          </Slide>
-
-          <Slide bgColor={githubGray} transition={['slide']}>
-            <a href='https://github.com/gatsbyjs/gatsby' target='_blank'>
-              <Image src={require('./img/gatsby.png')} width='100%'></Image>
-            </a>
-            <a href='https://github.com/jxnblk/static-react' target='_blank'>
-              <Image src={require('./img/jxnblk.png')} width='100%'></Image>
-            </a>
-            <a href='https://github.com/koistya/react-static-boilerplate' target='_blank'>
-              <Image src={require('./img/koistya.png')} width='100%'></Image>
-            </a>
-            <a href='https://github.com/MoOx/statinamic' target='_blank'>
-              <Image src={require('./img/moox.png')} width='100%'></Image>
-            </a>
-            <a href='https://github.com/qimingweng/static-render-webpack-plugin' target='_blank'>
-              <Image src={require('./img/qimingweng.png')} width='100%'></Image>
-            </a>
-            <a href='https://github.com/yeojz/metalsmith-react-templates' target='_blank'>
-              <Image src={require('./img/metalsmith.png')} width='100%'></Image>
-            </a>
-          </Slide>
-
           <Slide className={cx('spectacle-content')} transition={['slide']}>
             <Heading size={2} caps textColor='white' textFont='primary'>
               So were done?
@@ -574,6 +549,31 @@ export const routes = (
               <Appear><ListItem>AWS Lambda + API Gateway</ListItem></Appear>
               <Appear><ListItem>Serverless</ListItem></Appear>
             </List>
+          </Slide>
+
+          <Slide transition={['slide']}>
+            <Heading size={3} textColor='white'>Other Resources</Heading>
+          </Slide>
+
+          <Slide bgColor={githubGray} transition={['slide']}>
+            <a href='https://github.com/gatsbyjs/gatsby' target='_blank'>
+              <Image src={require('./img/gatsby.png')} width='100%'></Image>
+            </a>
+            <a href='https://github.com/jxnblk/static-react' target='_blank'>
+              <Image src={require('./img/jxnblk.png')} width='100%'></Image>
+            </a>
+            <a href='https://github.com/koistya/react-static-boilerplate' target='_blank'>
+              <Image src={require('./img/koistya.png')} width='100%'></Image>
+            </a>
+            <a href='https://github.com/MoOx/statinamic' target='_blank'>
+              <Image src={require('./img/moox.png')} width='100%'></Image>
+            </a>
+            <a href='https://github.com/qimingweng/static-render-webpack-plugin' target='_blank'>
+              <Image src={require('./img/qimingweng.png')} width='100%'></Image>
+            </a>
+            <a href='https://github.com/yeojz/metalsmith-react-templates' target='_blank'>
+              <Image src={require('./img/metalsmith.png')} width='100%'></Image>
+            </a>
           </Slide>
 
           <Slide transition={['slide']}>
