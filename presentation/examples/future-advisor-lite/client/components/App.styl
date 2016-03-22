@@ -4,7 +4,6 @@
   box-sizing border-box
 
 body
-  background react-blue
   font-family helvetica
   color black
   font-size 18px
@@ -13,13 +12,19 @@ h1
   margin 20px 0
 
 a
-  color react-blue
+  color blue
 
 pre
   font-family mono
   line-height 1.5
   border-radius 3px
   border 1px solid border-gray
+
+.container
+  max-width 1100px
+  margin 0 auto
+  padding-left spaceline
+  padding-right spaceline
 
 .page
   padding 20px
@@ -43,23 +48,16 @@ pre
 
 .hl
   font-weight bold
-  color react-blue
 .App
-  background black
   min-width 320px
 
   h1
-    color react-blue
     font-weight 300
     font-size 52px
 
-  p
-    color white
-
 .nav
+  composes container
   background white
-  padding-left 20px
-  padding-right 20px
   display flex
   align-items center
 

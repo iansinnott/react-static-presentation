@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Link, IndexLink } from 'react-router';
 import 'normalize.css';
+import 'react-fa';
 
 // Using CSS Modules so we assign the styles to a variable
 import classnames from 'classnames/bind';
@@ -58,7 +59,7 @@ export const App = React.createClass({
           <IndexLink to='/' className={s.logo}>
             <img src={require('./fa-logo.png')} alt='Future Advisor Logo' />
           </IndexLink>
-          <Link to='/pricing/retirement-advice' activeClassName={s.active}>Pricing</Link>
+          <Link to='/pricing' activeClassName={s.active}>Pricing</Link>
           <Link to='/who-we-are' activeClassName={s.active}>Who We Are</Link>
           <Link to='/investment-library' activeClassName={s.active}>Who We Are</Link>
           <div className={s.right}>

@@ -1,7 +1,35 @@
+@require '../lib/vars.styl'
+
+.Pricing
+  display block
+
 // This is how composition works with CSS Modules
 // http://glenmaddern.com/articles/css-modules
 .page
   composes page from './App.styl'
 
+.container
+  composes container from './App.styl'
+
 .siteTitle
   composes siteTitle from './App.styl'
+
+.banner
+  background url(./some-bg.jpg) no-repeat black
+  background-size cover
+  padding 110px 0
+  text-align center
+
+  h1
+  p
+    max-width 800px
+    margin 0 auto
+    color white
+
+  h1
+    font-weight 700
+    margin-bottom spaceline
+  p
+    font-weight 300
+    line-height 1.5
+

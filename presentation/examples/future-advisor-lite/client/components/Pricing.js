@@ -1,40 +1,36 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import classnames from 'classnames/bind';
 
 import s from './Pricing.styl';
+const cx = classnames.bind(s);
 
-export const RetirementAdvice = React.createClass({
-  render() {
-    return (
-      <div className={s.page}>
-        <div className={s.siteTitle}>
-          <h1>Retirement Avice</h1>
-        </div>
-        <p>Hey this is some retirement advice</p>
-      </div>
-    );
-  },
-});
+export const RetirementAdvice = () => (
+  <div className={cx('container', 'page')}>
+    <div className={s.siteTitle}>
+      <h1>Retirement Avice</h1>
+    </div>
+    <p>Hey this is some retirement advice</p>
+  </div>
+);
 
-export const InvestmentManagement = React.createClass({
-  render() {
-    return (
-      <div className={s.InvestmentManagement}>
-        <span className='temp'>InvestmentManagement</span>
-      </div>
-    );
-  },
-});
+export const InvestmentManagement = () => (
+  <div className={cx('container', 'page')}>
+    <div className={s.siteTitle}>
+      <h1>Investment Management</h1>
+    </div>
+    <p>Hey this is some investment management</p>
+  </div>
+);
 
-export const CollegeSavings = React.createClass({
-  render() {
-    return (
-      <div className={s.CollegeSavings}>
-        <span className='temp'>CollegeSavings</span>
-      </div>
-    );
-  },
-});
+export const CollegeSavings = () => (
+  <div className={cx('container', 'page')}>
+    <div className={s.siteTitle}>
+      <h1>College Savings</h1>
+    </div>
+    <p>Hey this is some college savings</p>
+  </div>
+);
 
 export const Pricing = React.createClass({
   propTypes: {
@@ -45,14 +41,26 @@ export const Pricing = React.createClass({
     return (
       <div>
         <div className={s.banner}>
-          <h1>Invest like a millionaire,<br />for less than you think</h1>
-          <p>Select a service below to see how much we charge</p>
+          <div className={s.container}>
+            <h1>Invest like a millionaire,<br />for less than you think</h1>
+            <p>Select a service below to see how much we charge</p>
+          </div>
         </div>
         <nav className={s.nav}>
-          <Link to='/pricing/retirement-advice' activeClassName={s.active}>
-            <i className='fa fa-line-chart'></i>
-            Retirement Advice
-          </Link>
+          <div className={s.container}>
+            <Link to='/pricing/retirement-advice' activeClassName={s.active}>
+              <i className='fa fa-line-chart'></i>
+              Retirement Advice
+            </Link>
+            <Link to='/pricing/investment-management' activeClassName={s.active}>
+              <i className='fa fa-sun-o'></i>
+              Investment Management
+            </Link>
+            <Link to='/pricing/college-savings' activeClassName={s.active}>
+              <i className='fa fa-university'></i>
+              College Savings
+            </Link>
+          </div>
         </nav>
         {this.props.children}
       </div>

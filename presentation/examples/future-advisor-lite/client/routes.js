@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
+import { Route, IndexRoute, IndexRedirect } from 'react-router';
 
 import {
   App,
@@ -20,6 +20,7 @@ export const routes = (
     <Route path='who-we-are' component={WhoWeAre} />
 
     <Route path='pricing' component={Pricing}>
+      <IndexRedirect to='retirement-advice' />
       <Route path='retirement-advice' component={RetirementAdvice} />
       <Route path='investment-management' component={InvestmentManagement} />
       <Route path='college-savings' component={CollegeSavings} />
