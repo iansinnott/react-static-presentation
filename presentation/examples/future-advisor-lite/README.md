@@ -1,6 +1,6 @@
 # Static Site With React Router
 
-The boilerplate from https://github.com/iansinnott/react-static-boilerplate.
+Example clone of the Future Advisor site for my internal talk at Future Advisor on 2016-03-22.
 
 **Quick Start:**
 
