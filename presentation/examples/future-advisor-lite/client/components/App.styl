@@ -1,0 +1,100 @@
+@require '../lib/vars.styl'
+
+*
+  box-sizing border-box
+
+body
+  background react-blue
+  font-family helvetica
+  color black
+  font-size 18px
+
+h1
+  margin 20px 0
+
+a
+  color react-blue
+
+pre
+  font-family mono
+  line-height 1.5
+  border-radius 3px
+  border 1px solid border-gray
+
+.page
+  padding 20px
+
+.siteTitle
+  display flex
+  align-items center
+
+  +below(420px)
+    display block
+
+  img
+    display inline-block
+    width 80px
+    height 80px
+    margin-right 20px
+
+    +below(420px)
+      display block
+      margin 0 auto
+
+.hl
+  font-weight bold
+  color react-blue
+.App
+  background black
+  min-width 320px
+
+  h1
+    color react-blue
+    font-weight 300
+    font-size 52px
+
+  p
+    color white
+
+.nav
+  background white
+  padding-left 20px
+  padding-right 20px
+  display flex
+  align-items center
+
+  a
+    display inline-block
+    padding 20px
+    font-size 14px
+    font-weight bold
+    text-transform uppercase
+    text-decoration none
+    color #999
+    &:hover
+      color black
+
+  .active
+    background #fafafa
+    color black
+
+  .logo
+    padding 0
+    margin-right spaceline
+
+  .right
+    margin-left auto
+    margin-right 0
+    a
+      text-transform none
+
+  .signUp
+    background #E57B4A
+    border-bottom 3px solid #BF673D
+    color white
+    padding 10px
+    border-radius 3px
+    &:hover
+      color white
+      background #BF673D
+      border-color darken(#BF673D, 15%)
