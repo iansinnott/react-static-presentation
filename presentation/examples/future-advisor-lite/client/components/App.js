@@ -14,16 +14,27 @@ import './favicon.ico';
 export const Home = React.createClass({
   render() {
     return (
-      <div className={s.page}>
-        <div className={s.siteTitle}>
-          <h1>React Static</h1>
+      <div>
+        <div className={s.banner}>
+          <div className={s.container}>
+            <h1>You already have investment accounts, we help make them smarter</h1>
+            <p>
+              Retirement, college savings, your dream house. Whatever your
+              investment goals are, we can help get you there sooner.
+            </p>
+          </div>
         </div>
-        <p>Why static sites with React?</p>
-        <ul>
-          <li><span className={s.hl}>Dev</span> friendly</li>
-          <li><span className={s.hl}>User</span> friendly</li>
-          <li><span className={s.hl}>SEO</span> friendly</li>
-        </ul>
+        <div className={s.container}>
+          <div className={s.siteTitle}>
+            <h1>Home Page</h1>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+            vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+            no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          </p>
+        </div>
       </div>
     );
   },
@@ -61,7 +72,7 @@ export const App = React.createClass({
           </IndexLink>
           <Link to='/pricing' activeClassName={s.active}>Pricing</Link>
           <Link to='/who-we-are' activeClassName={s.active}>Who We Are</Link>
-          <Link to='/investment-library' activeClassName={s.active}>Who We Are</Link>
+          <Link to='/investing-library' activeClassName={s.active}>Investing Library</Link>
           <div className={s.right}>
             <Link to='/login' className={s.login}>Log In</Link>
             <Link to='/sign-up' className={s.signUp}>Sign up for free</Link>
