@@ -275,7 +275,26 @@ const App = () => (
             </CodePane>
           </Slide>
 
+          <Slide className={cx('spectacle-content', 'codepane')} transition={['fade']} bgColor='primary'>
+            <CodePane
+              style={{ fontSize: '1.2rem' }}
+              lang='jsx'
+              margin='20px auto'>
+              {`
+import React from 'react';
+import ReactDOM from 'react-dom/server';
+import fs from 'fs';
 
+const App = () => (
+  <div className='App'>
+    <h1>Hi there</h1>
+  </div>
+);
+
+fs.writeFileSync('index.html', ReactDOM.renderToString(<App />));
+              `.trim()}
+            </CodePane>
+          </Slide>
 
 
 
@@ -451,18 +470,6 @@ export const routes = (
             </Heading>
           </Slide>
 
-          <Slide className={cx('spectacle-content', 'repos')} transition={['slide']} bgColor={githubGray}>
-            <Image src={require('./img/react-static-webpack-plugin.png')} width='80%'></Image>
-            <Appear>
-              <Image src={require('./img/react-static-boilerplate.png')} width='70%'></Image>
-            </Appear>
-            <Appear>
-              <Heading size={2} style={{ fontWeight: 100 }} textColor='#333' textFont='primary'>
-                git.io/react-static
-              </Heading>
-            </Appear>
-          </Slide>
-
           <Slide transition={['slide']}>
             <Heading size={2} textColor={reactBlue} textFont='primary'>
               Also want
@@ -509,6 +516,19 @@ export const routes = (
               <Appear><ListItem>Deploy full static website to the host of your choice</ListItem></Appear>
             </List>
           </Slide>
+
+          <Slide className={cx('spectacle-content', 'repos')} transition={['slide']} bgColor={githubGray}>
+            <Image src={require('./img/react-static-webpack-plugin.png')} width='80%'></Image>
+            <Appear>
+              <Image src={require('./img/react-static-boilerplate.png')} width='70%'></Image>
+            </Appear>
+            <Appear>
+              <Heading size={2} style={{ fontWeight: 100 }} textColor='#333' textFont='primary'>
+                git.io/react-static
+              </Heading>
+            </Appear>
+          </Slide>
+
 
           <Slide transition={['slide']}>
             <Heading size={1} caps fit textColor={reactBlue} textFont='primary'>
