@@ -614,7 +614,7 @@ export const routes = (
             <p style={{ textAlign: 'left' }}>git.io/static-presentation</p>
             <p style={{ textAlign: 'left', color: reactBlue, }}>Questions?</p>
             <List>
-              <ListItem>@ian_989</ListItem>
+              <ListItem>@ian_sinn</ListItem>
               <ListItem>github.com/iansinnott</ListItem>
             </List>
           </Slide>
